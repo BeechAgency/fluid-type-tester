@@ -25,7 +25,7 @@ section.fluid-type {
   top: 2rem;
   box-shadow: 0 0 10px var(--beech--color--light-gray);
 
-  transition: all 350ms ease-in-out;
+  transition: all 150ms ease-in-out;
   z-index: 2;
 
   &.hidden {
@@ -56,7 +56,7 @@ button {
   padding: 0.5rem 1rem;
   border-radius: 3px;
 
-  transition: all 350ms ease-in-out;
+  transition: all 150ms ease-in-out;
   position: static;
   top: 0;
   right: 0;
@@ -104,5 +104,29 @@ button.fluid-type-controls-toggle.hidden {
 
   &:hover {
     opacity: 1;
+  }
+}
+
+.notification {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 2rem;
+  translate: -50% calc(-100% - 3rem);
+  background-color: var(--beech--color--green);
+  box-shadow: 0 0 10px var(--beech--color--light-gray);
+
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  transition: all 350ms ease-in-out;
+
+  font-size: 3rem;
+  font-weight: bold;
+
+  transition: all 350ms ease-in-out;
+
+  &.show {
+    translate: -50% 0%;
   }
 }

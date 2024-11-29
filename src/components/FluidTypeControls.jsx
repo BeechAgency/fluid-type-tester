@@ -3,6 +3,11 @@ import { useState } from 'react'
 
 export default function FluidTypeControls({ customCSS, setCustomCSS, applyCSS }) {
     const [ isHidden, setIsHidden ] = useState(false);
+
+    const handleApplyCss = () => {
+      applyCSS();
+      setIsHidden(true);
+    }
   return (
     <div className={`fluid-type-controls ${isHidden ? "hidden" : ""}`}>
       <div className="inner">
@@ -23,7 +28,7 @@ export default function FluidTypeControls({ customCSS, setCustomCSS, applyCSS })
           }}
         />
         <div className="button-row">
-          <button onClick={applyCSS} className="go-button">
+          <button onClick={handleApplyCss} className="go-button">
             Apply CSS
           </button>
 

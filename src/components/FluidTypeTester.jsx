@@ -4,6 +4,7 @@ import DisplayScreenWidth from "./DisplayScreenWidth";
 
 const FluidTypeTester = () => {
   const [customCSS, setCustomCSS] = useState("");
+  const [ showNotification, setShowNotification ] = useState(false);
 
   const applyCSS = () => {
     const styleTag = document.getElementById("custom-styles");
@@ -15,6 +16,13 @@ const FluidTypeTester = () => {
       newStyleTag.textContent = customCSS;
       document.head.appendChild(newStyleTag);
     }
+
+    setTimeout(() => {
+      setShowNotification(true);
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 2000);
+    }, 100);
   };
 
   return (
@@ -24,6 +32,8 @@ const FluidTypeTester = () => {
         setCustomCSS={setCustomCSS}
         applyCSS={applyCSS}
       />
+
+      <div className={`notification ${showNotification ? "show" : ""}`}>🎉 CSS APPLIED! 🎉</div>
 
       <DisplayScreenWidth />
 
